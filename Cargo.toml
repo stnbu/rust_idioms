@@ -1,0 +1,4 @@
+[package]
+version = "0.0.1"
+name = "foo"
+authors = ["m@b.com"]
