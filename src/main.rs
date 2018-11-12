@@ -45,6 +45,13 @@ fn s_truct() {
     //let _o = Mary(1, 1);  // oddly does not work
 }
 
+fn e_num() {
+    enum CumPass {
+        North, East, West, South,
+    }
+    let _enum = CumPass::West;
+}
+
 use std::collections::HashMap;
 fn hmap() {
     let mut book_reviews = HashMap::new();
@@ -57,10 +64,21 @@ fn hmap() {
     assert_eq!(x, "foo");
 }
 
+fn wat() {
+    type _Dingus = &'static str;
+    // what the heck is going on here? I the book says
+    struct Zoo {
+        n: _Dingus,
+    }
+    let _z = Zoo { n: "foo" };
+    // In what other context can I use _dingus?
+}
+
 fn main() {
     get_element_n_of_string();
     misreuse_of_closure();
     bytes_to_utf8();
     hmap();
     s_truct();
+    e_num();
 }
