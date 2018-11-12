@@ -1,9 +1,9 @@
 // Quirky, idiomatic Rust stuff...
 
+#[allow(dead_code)]
 fn get_element_n_of_string() {
     let s = "mybog";
-    let chars: Vec<char> = s.chars().collect();
-    println!("{}", chars[0]);
+    let _chars: Vec<char> = s.chars().collect();
 }
 
 fn misreuse_of_closure() {
@@ -19,6 +19,30 @@ fn bytes_to_utf8() {
     // We know these bytes are valid, so just use `unwrap()`.
     let sparkle_heart = str::from_utf8(&sparkle_heart).unwrap();
     assert_eq!("💖", sparkle_heart);
+}
+
+fn s_truct() {
+    struct Bob(u8, u8);
+    let _bob = Bob(1, 1);
+    _bob.0;
+    _bob.1;
+    struct Mary {
+        staff: u8,
+        rod: u8,
+    };
+    let mut _m = Mary {
+        staff: 1,
+        rod: 1,
+    };
+    _m.staff;
+    _m.rod;
+    _m.rod = 2;
+    let _n = Mary {
+        staff: 1,
+        rod: 1,
+    };
+    //_n.rod = 7;  // will fail to compile
+    //let _o = Mary(1, 1);  // oddly does not work
 }
 
 use std::collections::HashMap;
@@ -38,4 +62,5 @@ fn main() {
     misreuse_of_closure();
     bytes_to_utf8();
     hmap();
+    s_truct();
 }
