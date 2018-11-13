@@ -66,12 +66,12 @@ fn hmap() {
 
 fn wat() {
     type _Dingus = &'static str;
-    // what the heck is going on here? I the book says
+    // what the heck is going on here? I the book says...
     struct Zoo {
         n: _Dingus,
     }
     let _z = Zoo { n: "foo" };
-    // In what other context can I use _dingus?
+    // ...In what other context can I use _Dingus?
 }
 
 fn main() {
@@ -81,4 +81,5 @@ fn main() {
     hmap();
     s_truct();
     e_num();
+    o_ption();
 }
