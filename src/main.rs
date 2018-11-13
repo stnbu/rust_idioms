@@ -74,6 +74,17 @@ fn wat() {
     // ...In what other context can I use _Dingus?
 }
 
+fn m_atch() {
+    let loki = ("Loki", true, 800u32);
+    let mut _foo = match loki {
+        (_, demi, _) if demi => 0,
+        (name, _, _) if name == "Bob" => 1,
+        (_, _, pow) if pow <= 1000 => 2,
+        _ => 3,  // and the other things
+    };
+    _foo = 99;
+}
+
 fn main() {
     get_element_n_of_string();
     misreuse_of_closure();
@@ -81,5 +92,5 @@ fn main() {
     hmap();
     s_truct();
     e_num();
-    o_ption();
+    m_atch();
 }
