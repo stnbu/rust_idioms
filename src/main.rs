@@ -85,7 +85,20 @@ fn m_atch() {
     _foo = 99;
 }
 
+fn o_ption() {
+    let mut rng = 0..7;
+    println!("> {:?}", rng.next());
+    println!("> {:?}", rng.next());
+    loop {
+        match rng.next() {
+            Some(n) => println!("{:?}", n),
+            None => {println!("broke"); break},
+        }
+    }
+}
+
 fn main() {
+    o_ption();
     get_element_n_of_string();
     misreuse_of_closure();
     bytes_to_utf8();
