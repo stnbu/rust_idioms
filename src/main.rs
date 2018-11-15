@@ -87,17 +87,25 @@ fn m_atch() {
 
 fn o_ption() {
     let mut rng = 0..7;
-    println!("> {:?}", rng.next());
-    println!("> {:?}", rng.next());
+    rng.next();
+    rng.next();
     loop {
         match rng.next() {
-            Some(n) => println!("{:?}", n),
-            None => {println!("broke"); break},
-        }
+            Some(n) => n,
+            None => break,
+        };
+    }
+}
+
+fn r_everse_iter() {
+    let x = [1, 2, 3];
+    for y in x.iter().rev() {  // &x.rev() does not work!
+        assert!(*y != 0);  // a star is born
     }
 }
 
 fn main() {
+    r_everse_iter();
     o_ption();
     get_element_n_of_string();
     misreuse_of_closure();
