@@ -104,7 +104,14 @@ fn r_everse_iter() {
     }
 }
 
+fn string_iter() {
+    let s = "bob has fleas";
+    for _ in s.split(" ") {}
+    for _ in s.chars() {}
+}
+
 fn main() {
+    string_iter();
     r_everse_iter();
     o_ption();
     get_element_n_of_string();
