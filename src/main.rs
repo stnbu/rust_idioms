@@ -110,7 +110,28 @@ fn string_iter() {
     for _ in s.chars() {}
 }
 
+fn iter_consumer() {
+    let x = 1..99999;
+    // I believe this is ``list(xrange(1, 99999))`` ..no?
+    let _y = x.collect::<Vec<i32>>();
+    let x = 1..99999;
+    let _y: Vec<i32> = x.collect();  // prettier
+}
+
+//fn f_ind() {}
+
+fn f_ilter() {
+    let rng = 1..1000;
+    let rng_even = rng.filter(|n| *n % 2 == 0)
+        .collect::<Vec<i32>>();
+    for n in rng_even {
+        assert!(n > 0);
+    }
+}
+
 fn main() {
+    f_ilter();
+    iter_consumer();
     string_iter();
     r_everse_iter();
     o_ption();
