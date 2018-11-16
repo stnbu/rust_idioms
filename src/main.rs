@@ -129,7 +129,20 @@ fn f_ilter() {
     }
 }
 
+fn take_5() {
+    let rng = 1..1000_i32;
+    let rng_even_pow3 = rng.filter(|n| *n % 2 == 0)
+        .map(|n| n.pow(3))  // why no ``*`` ?
+        .take(5)  // yay
+        .collect::<Vec<i32>>();
+    #[allow(path_statements)]  // what is a path_statement?
+    for _n in rng_even_pow3 {
+        _n;
+    }
+}
+
 fn main() {
+    take_5();
     f_ilter();
     iter_consumer();
     string_iter();
