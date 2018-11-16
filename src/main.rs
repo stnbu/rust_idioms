@@ -141,7 +141,13 @@ fn take_5() {
     }
 }
 
+fn f_old() {
+    let sum = (0..101).fold(0, |sum, n| sum + n);
+    assert_eq!(sum, 5050);
+}
+
 fn main() {
+    f_old();
     take_5();
     f_ilter();
     iter_consumer();
